@@ -11,15 +11,9 @@ def kraken_price(pair):
 	data = requests.get(url).json()
 	return float(data['result']['XXBTZEUR']['c'][0])
 
-def bitfinex_price(pair):
-	url = 'https://api.bitfinex.com/v2/tickers?symbols=t'+pair.upper()
-	data = requests.get(url).json()
-	return float(data[0][7])
-
 
 while True:
 	bitstamp = bitstamp_price("btceur")
 	kraken = kraken_price("xbteur")
-	bitfinex = bitfinex_price("btceur")
-	print("Bitstamp: {0}\nKraken: {1}\nBitfinex: {2}\n".format(bitstamp,kraken,bitfinex))
+	print("Bitstamp: {0}\nKraken: {1}\n".format(bitstamp,kraken))
 	sleep(10)
