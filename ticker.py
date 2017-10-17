@@ -17,10 +17,9 @@ def bitfinex_price(pair):
 	return float(data[0][7])
 
 
-
 while True:
 	bitstamp = bitstamp_price("btceur")
 	kraken = kraken_price("xbteur")
 	bitfinex = bitfinex_price('btceur')
-	print("Bitstamp: {0}\nKraken: {1}\nBitfinex: {2}".format(bitstamp,kraken,bitfinex))
+	print("Bitstamp: {0}\nKraken: {1}\nBitfinex: {2}\n".format(bitstamp,kraken,bitfinex))
 	sleep(10)
