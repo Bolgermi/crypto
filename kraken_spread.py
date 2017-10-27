@@ -12,6 +12,9 @@ def kraken_spread(pair):
     df = pd.DataFrame(df,columns=['time','bid','ask'])
     df['bid'] = df['bid'].apply(lambda x: float(x))
     df['ask'] = df['ask'].apply(lambda x: float(x))
-    df['time'] = df['time'].apply(lambda x: datetime.datetime.fromtimestamp(x))
+    df['time'] = df['time'].apply(lambda x: datetime.fromtimestamp(x))
     df['%'] = ((df['ask'] - df['bid'])/df['bid'])*100
     return df
+
+
+print(kraken_spread('xbteur'))
